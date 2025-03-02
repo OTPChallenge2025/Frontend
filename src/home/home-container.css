@@ -1,0 +1,205 @@
+/* Home as a grid: */
+.home {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 220px 1fr;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+
+  width: 100%;
+  height: 100vh;
+}
+
+/* Home title: */
+.home-title {
+  grid-column: span 2;
+  grid-row: span 1;
+
+  width: 80%;
+  height: 130px;
+
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 50px;
+  margin-bottom: 50px;
+  text-align: center;
+  line-height: 130px;
+
+  background: #a2c9f0;
+  border-radius: 40px;
+
+  font-family: "Marcellus";
+  font-style: normal;
+  font-size: 3vmax;
+  color: #000000;
+}
+
+/* Entire login page under the title: */
+.home-loginPage {
+  grid-row: 2 / 2;
+  grid-column: 1 / 3;
+
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr 1fr;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+
+  width: 100%;
+  height: 100%;
+
+  background: rgba(255, 255, 255, 0.4);
+}
+
+/* GenerateOTP and Login buttons: */
+.home-buttons {
+  grid-row: 1 / 3;
+  grid-column: 1 / 1;
+
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 1fr 1fr;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+
+  width: 100%;
+  height: 100%;
+}
+
+.home-generateOTPButton {
+  width: 50%;
+  height: 35%;
+
+  margin: auto;
+
+  background-color: #2a2a2a !important;
+  border-radius: 40px !important;
+  border: #000000 solid 3px !important;
+
+  font-size: 2.5vmax !important;
+}
+.home-generateOTPButton:disabled:hover {
+  background-color: #2a2a2a !important;
+  border-radius: 40px !important;
+}
+.home-generateOTPButton:hover {
+  background-color: #ff4444 !important;
+  border-radius: 50px !important;
+}
+
+.home-loginButton {
+  width: 50%;
+  height: 35%;
+
+  margin: auto;
+
+  background-color: #a2c9f0 !important;
+  color: black !important;
+  border-radius: 40px !important;
+  border: #000000 solid 3px !important;
+
+  font-size: 2.5vmax !important;
+}
+.home-loginButton:disabled:hover {
+  background-color: #a2c9f0 !important;
+  border-radius: 40px !important;
+}
+.home-loginButton:hover {
+  background-color: white !important;
+  border-radius: 50px !important;
+}
+
+/* Text for generated OTP: */
+.home-OTPGenerated {
+  grid-row: 1 / 1;
+  grid-column: 2 / 2;
+
+  margin: auto;
+  text-align: center;
+
+  font-family: "Marcellus";
+  font-style: normal;
+  font-size: 2.5vmax;
+  color: #000000;
+}
+
+.home-OTP {
+  padding: 20px;
+
+  font-size: 3vmax;
+
+  background-color: white !important;
+  border-radius: 20px !important;
+  background: #ffffff;
+}
+
+/* Text for timer: */
+.home-OTPtimer {
+  grid-row: 2 / 2;
+  grid-column: 2 / 2;
+
+  margin: auto;
+  text-align: center;
+
+  font-family: "Marcellus";
+  font-style: normal;
+  font-size: 2.5vmax;
+  color: #000000;
+}
+
+/* Entire logout page under the title: */
+.home-logoutPage {
+  grid-row: 2 / 2;
+  grid-column: 1 / 3;
+
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 200px 1fr;
+  align-items: center;
+  justify-content: center;
+
+  width: 100%;
+  height: 100%;
+
+  background: rgba(255, 255, 255, 0.4);
+}
+
+.home-logoutP {
+  margin: auto;
+
+  font-family: "Marcellus";
+  font-style: normal;
+  font-size: 3vmax;
+  color: #000000;
+}
+
+.home-logoutButton {
+  width: 50%;
+  height: 30%;
+
+  margin: auto;
+
+  background-color: #a2c9f0 !important;
+  color: black !important;
+  border-radius: 40px !important;
+  border: #000000 solid 3px !important;
+
+  font-size: 2.5vmax !important;
+}
+.home-logoutButton:hover {
+  background-color: white !important;
+  border-radius: 50px !important;
+}
+
+/* The modal for login: */
+.home-modalHeader {
+  background-color: #a2c9f0;
+  border-bottom: #000000 solid 3px !important;
+}
+
+.home-modalBody {
+  background-color: #a2c9f0;
+}
