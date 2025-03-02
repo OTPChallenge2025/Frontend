@@ -31,6 +31,16 @@ export default function HomeContainer() {
 
   useEffect(() => {
     timerId.current = setInterval(() => {
+      // Send every countdown:
+      if (
+        localStorage.getItem("encryptedOTP") === "| - - - - - - - - - - - - |"
+      ) {
+        // Reset timer:
+        setCountdown(1);
+      } else {
+        sendCurrentTime(countdown);
+      }
+
       setCountdown((prev) => prev - 1);
     }, 1000);
     return () => clearInterval(timerId.current);
@@ -43,6 +53,7 @@ export default function HomeContainer() {
       setDisableGenerateOTP(false);
       localStorage.setItem("encryptedOTP", "| - - - - - - - - - - - - |");
       localStorage.setItem("decryptedOTP", "| - - - - - - - - - - - - |");
+      sendCurrentTime(0);
     }
   }, [countdown]);
 
@@ -96,10 +107,37 @@ export default function HomeContainer() {
         setOTP(decryptedOTP);
         localStorage.setItem("encryptedOTP", result);
 
-        //Now I start the timer: No delay:
+        //Now I start the timer:
         setCountdown(seconds);
         setDisableGenerateOTP(true);
       }
+    });
+  };
+
+  const sendCurrentTime = (countdown) => {
+    return API_HOME.sendCurrentTime(countdown, (result, status) => {
+      if (status === 200 || status === 201) {
+        console.log(result);
+      }
+    });
+  };
+
+  const plusSeconds = () => {
+    console.log(seconds);
+    setSeconds((prevSeconds) => {
+      if (prevSeconds < 100) {
+        return prevSeconds + 1;
+      }
+      return prevSeconds;
+    });
+  };
+
+  const minusSeconds = () => {
+    setSeconds((prevSeconds) => {
+      if (prevSeconds > 30) {
+        return prevSeconds - 1;
+      }
+      return prevSeconds;
     });
   };
 
@@ -155,6 +193,24 @@ export default function HomeContainer() {
           </div>
 
           <div className="home-OTPtimer">
+            <div>Current OTP time (from 30s to 100s): {seconds}s</div>
+            <div style={{ display: "flex" }}>
+              <div>Change time here:</div>
+              <Button
+                className="home-plusAndMinus"
+                onClick={plusSeconds}
+                disabled={disableGenerateOTP}
+              >
+                +
+              </Button>
+              <Button
+                className="home-plusAndMinus"
+                onClick={minusSeconds}
+                disabled={disableGenerateOTP}
+              >
+                -
+              </Button>
+            </div>
             <div>Timer (until OTP resets):</div>
             <div>{formatTime(countdown)}</div>
           </div>
@@ -172,7 +228,7 @@ export default function HomeContainer() {
         </div>
       );
     }
-  }, [loggedIn, OTP, countdown, disableGenerateOTP]);
+  }, [loggedIn, OTP, countdown, disableGenerateOTP, seconds]);
 
   return (
     <div className="home">

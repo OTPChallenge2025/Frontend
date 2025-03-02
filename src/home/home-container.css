@@ -79,7 +79,7 @@
   border-radius: 40px !important;
   border: #000000 solid 3px !important;
 
-  font-size: 2.5vmax !important;
+  font-size: 2.25vmax !important;
 }
 .home-generateOTPButton:disabled:hover {
   background-color: #2a2a2a !important;
@@ -101,7 +101,7 @@
   border-radius: 40px !important;
   border: #000000 solid 3px !important;
 
-  font-size: 2.5vmax !important;
+  font-size: 2.25vmax !important;
 }
 .home-loginButton:disabled:hover {
   background-color: #a2c9f0 !important;
@@ -122,7 +122,7 @@
 
   font-family: "Marcellus";
   font-style: normal;
-  font-size: 2.5vmax;
+  font-size: 2.25vmax;
   color: #000000;
 }
 
@@ -146,8 +146,28 @@
 
   font-family: "Marcellus";
   font-style: normal;
-  font-size: 2.5vmax;
+  font-size: 2.25vmax;
   color: #000000;
+}
+
+.home-plusAndMinus {
+  width: 10%;
+  height: 6vh;
+
+  margin: auto;
+
+  background-color: #a2c9f0 !important;
+  color: black !important;
+  border-radius: 10px !important;
+  border: #000000 solid 1.5px !important;
+
+  font-size: 1.25vmax !important;
+}
+.home-plusAndMinus:disabled:hover {
+  background-color: #a2c9f0 !important;
+}
+.home-plusAndMinus:hover {
+  background-color: white !important;
 }
 
 /* Entire logout page under the title: */
@@ -187,7 +207,7 @@
   border-radius: 40px !important;
   border: #000000 solid 3px !important;
 
-  font-size: 2.5vmax !important;
+  font-size: 2.25vmax !important;
 }
 .home-logoutButton:hover {
   background-color: white !important;
